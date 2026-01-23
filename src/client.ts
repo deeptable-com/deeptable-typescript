@@ -115,9 +115,9 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Deeptable API.
+ * API Client for interfacing with the DeepTable API.
  */
-export class Deeptable {
+export class DeepTable {
   apiKey: string;
 
   baseURL: string;
@@ -133,7 +133,7 @@ export class Deeptable {
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Deeptable API.
+   * API Client for interfacing with the DeepTable API.
    *
    * @param {string | undefined} [opts.apiKey=process.env['DEEPTABLE_API_KEY'] ?? undefined]
    * @param {string} [opts.baseURL=process.env['DEEPTABLE_BASE_URL'] ?? https://api.deeptable.com] - Override the default base URL for the API.
@@ -150,8 +150,8 @@ export class Deeptable {
     ...opts
   }: ClientOptions = {}) {
     if (apiKey === undefined) {
-      throw new Errors.DeeptableError(
-        "The DEEPTABLE_API_KEY environment variable is missing or empty; either provide it, or instantiate the Deeptable client with an apiKey option, like new Deeptable({ apiKey: 'My API Key' }).",
+      throw new Errors.DeepTableError(
+        "The DEEPTABLE_API_KEY environment variable is missing or empty; either provide it, or instantiate the DeepTable client with an apiKey option, like new DeepTable({ apiKey: 'My API Key' }).",
       );
     }
 
@@ -162,7 +162,7 @@ export class Deeptable {
     };
 
     this.baseURL = options.baseURL!;
-    this.timeout = options.timeout ?? Deeptable.DEFAULT_TIMEOUT /* 1 minute */;
+    this.timeout = options.timeout ?? DeepTable.DEFAULT_TIMEOUT /* 1 minute */;
     this.logger = options.logger ?? console;
     const defaultLogLevel = 'warn';
     // Set default logLevel early so that we can log a warning in parseLogLevel.
@@ -232,7 +232,7 @@ export class Deeptable {
         if (value === null) {
           return `${encodeURIComponent(key)}=`;
         }
-        throw new Errors.DeeptableError(
+        throw new Errors.DeepTableError(
           `Cannot stringify type ${typeof value}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`,
         );
       })
@@ -507,7 +507,7 @@ export class Deeptable {
     options: FinalRequestOptions,
   ): Pagination.PagePromise<PageClass, Item> {
     const request = this.makeRequest(options, null, undefined);
-    return new Pagination.PagePromise<PageClass, Item>(this as any as Deeptable, request, Page);
+    return new Pagination.PagePromise<PageClass, Item>(this as any as DeepTable, request, Page);
   }
 
   async fetchWithTimeout(
@@ -723,10 +723,10 @@ export class Deeptable {
     }
   }
 
-  static Deeptable = this;
+  static DeepTable = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static DeeptableError = Errors.DeeptableError;
+  static DeepTableError = Errors.DeepTableError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -746,10 +746,10 @@ export class Deeptable {
   structuredSheets: API.StructuredSheets = new API.StructuredSheets(this);
 }
 
-Deeptable.Files = Files;
-Deeptable.StructuredSheets = StructuredSheets;
+DeepTable.Files = Files;
+DeepTable.StructuredSheets = StructuredSheets;
 
-export declare namespace Deeptable {
+export declare namespace DeepTable {
   export type RequestOptions = Opts.RequestOptions;
 
   export import CursorIDPage = Pagination.CursorIDPage;

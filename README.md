@@ -1,8 +1,8 @@
-# Deeptable TypeScript API Library
+# DeepTable TypeScript API Library
 
 [![NPM version](<https://img.shields.io/npm/v/@deeptable/deeptable.svg?label=npm%20(stable)>)](https://npmjs.org/package/@deeptable/deeptable) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@deeptable/deeptable)
 
-This library provides convenient access to the Deeptable REST API from server-side TypeScript or JavaScript.
+This library provides convenient access to the DeepTable REST API from server-side TypeScript or JavaScript.
 
 The REST API documentation can be found on [docs.deeptable.com](https://docs.deeptable.com). The full API of this library can be found in [api.md](api.md).
 
@@ -20,9 +20,9 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Deeptable from '@deeptable/deeptable';
+import DeepTable from '@deeptable/deeptable';
 
-const client = new Deeptable({
+const client = new DeepTable({
   apiKey: process.env['DEEPTABLE_API_KEY'], // This is the default and can be omitted
 });
 
@@ -39,16 +39,16 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Deeptable from '@deeptable/deeptable';
+import DeepTable from '@deeptable/deeptable';
 
-const client = new Deeptable({
+const client = new DeepTable({
   apiKey: process.env['DEEPTABLE_API_KEY'], // This is the default and can be omitted
 });
 
-const params: Deeptable.StructuredSheetCreateParams = {
+const params: DeepTable.StructuredSheetCreateParams = {
   file_id: 'file_01h45ytscbebyvny4gc8cr8ma2',
 };
-const structuredSheetResponse: Deeptable.StructuredSheetResponse =
+const structuredSheetResponse: DeepTable.StructuredSheetResponse =
   await client.structuredSheets.create(params);
 ```
 
@@ -65,9 +65,9 @@ Request parameters that correspond to file uploads can be passed in many differe
 
 ```ts
 import fs from 'fs';
-import Deeptable, { toFile } from '@deeptable/deeptable';
+import DeepTable, { toFile } from '@deeptable/deeptable';
 
-const client = new Deeptable();
+const client = new DeepTable();
 
 // If you have access to Node `fs` we recommend using `fs.createReadStream()`:
 await client.files.upload({ file: fs.createReadStream('/path/to/file') });
@@ -94,7 +94,7 @@ a subclass of `APIError` will be thrown:
 const structuredSheetResponse = await client.structuredSheets
   .create({ file_id: 'file_01h45ytscbebyvny4gc8cr8ma2' })
   .catch(async (err) => {
-    if (err instanceof Deeptable.APIError) {
+    if (err instanceof DeepTable.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
       console.log(err.headers); // {server: 'nginx', ...}
@@ -128,7 +128,7 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const client = new Deeptable({
+const client = new DeepTable({
   maxRetries: 0, // default is 2
 });
 
@@ -145,7 +145,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const client = new Deeptable({
+const client = new DeepTable({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
@@ -161,7 +161,7 @@ Note that requests which time out will be [retried twice by default](#retries).
 
 ## Auto-pagination
 
-List methods in the Deeptable API are paginated.
+List methods in the DeepTable API are paginated.
 You can use the `for await … of` syntax to iterate through items across all pages:
 
 ```ts
@@ -202,7 +202,7 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 
 <!-- prettier-ignore -->
 ```ts
-const client = new Deeptable();
+const client = new DeepTable();
 
 const response = await client.structuredSheets
   .create({ file_id: 'file_01h45ytscbebyvny4gc8cr8ma2' })
@@ -231,9 +231,9 @@ The log level can be configured in two ways:
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import Deeptable from '@deeptable/deeptable';
+import DeepTable from '@deeptable/deeptable';
 
-const client = new Deeptable({
+const client = new DeepTable({
   logLevel: 'debug', // Show all log messages
 });
 ```
@@ -259,13 +259,13 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import Deeptable from '@deeptable/deeptable';
+import DeepTable from '@deeptable/deeptable';
 import pino from 'pino';
 
 const logger = pino();
 
-const client = new Deeptable({
-  logger: logger.child({ name: 'Deeptable' }),
+const client = new DeepTable({
+  logger: logger.child({ name: 'DeepTable' }),
   logLevel: 'debug', // Send all messages to pino, allowing it to filter
 });
 ```
@@ -328,10 +328,10 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import Deeptable from '@deeptable/deeptable';
+import DeepTable from '@deeptable/deeptable';
 import fetch from 'my-fetch';
 
-const client = new Deeptable({ fetch });
+const client = new DeepTable({ fetch });
 ```
 
 ### Fetch options
@@ -339,9 +339,9 @@ const client = new Deeptable({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import Deeptable from '@deeptable/deeptable';
+import DeepTable from '@deeptable/deeptable';
 
-const client = new Deeptable({
+const client = new DeepTable({
   fetchOptions: {
     // `RequestInit` options
   },
@@ -356,11 +356,11 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import Deeptable from '@deeptable/deeptable';
+import DeepTable from '@deeptable/deeptable';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
-const client = new Deeptable({
+const client = new DeepTable({
   fetchOptions: {
     dispatcher: proxyAgent,
   },
@@ -370,9 +370,9 @@ const client = new Deeptable({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import Deeptable from '@deeptable/deeptable';
+import DeepTable from '@deeptable/deeptable';
 
-const client = new Deeptable({
+const client = new DeepTable({
   fetchOptions: {
     proxy: 'http://localhost:8888',
   },
@@ -382,10 +382,10 @@ const client = new Deeptable({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import Deeptable from 'npm:@deeptable/deeptable';
+import DeepTable from 'npm:@deeptable/deeptable';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
-const client = new Deeptable({
+const client = new DeepTable({
   fetchOptions: {
     client: httpClient,
   },
