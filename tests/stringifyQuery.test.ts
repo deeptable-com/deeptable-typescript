@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Deeptable } from '@deeptable/deeptable';
+import { DeepTable } from '@deeptable/deeptable';
 
-const { stringifyQuery } = Deeptable.prototype as any;
+const { stringifyQuery } = DeepTable.prototype as any;
 
 describe(stringifyQuery, () => {
   for (const [input, expected] of [
