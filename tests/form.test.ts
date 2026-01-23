@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'deeptable/internal/uploads';
-import { toFile } from 'deeptable/core/uploads';
+import { multipartFormRequestOptions, createForm } from '@deeptable/deeptable/internal/uploads';
+import { toFile } from '@deeptable/deeptable/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

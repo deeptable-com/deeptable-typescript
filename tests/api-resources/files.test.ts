@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Deeptable, { toFile } from 'deeptable';
+import Deeptable, { toFile } from '@deeptable/deeptable';
 
 const client = new Deeptable({
   apiKey: 'My API Key',

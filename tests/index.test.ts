@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'deeptable/core/api-promise';
+import { APIPromise } from '@deeptable/deeptable/core/api-promise';
 
 import util from 'node:util';
-import Deeptable from 'deeptable';
-import { APIUserAbortError } from 'deeptable';
+import Deeptable from '@deeptable/deeptable';
+import { APIUserAbortError } from '@deeptable/deeptable';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {

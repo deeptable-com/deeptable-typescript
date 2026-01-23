@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "paths": {
-      "deeptable/*": ["./src/*"],
-      "deeptable": ["./src/index.ts"]
+      "@deeptable/deeptable/*": ["./src/*"],
+      "@deeptable/deeptable": ["./src/index.ts"]
     },
     "noEmit": true,
 
