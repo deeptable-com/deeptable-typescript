@@ -1,6 +1,6 @@
 {
   "name": "@deeptable/deeptable",
-  "version": "0.0.1",
+  "version": "0.1.0-alpha.1",
   "description": "The official TypeScript library for the DeepTable API",
   "author": "DeepTable <support@deeptable.com>",
   "types": "dist/index.d.ts",
