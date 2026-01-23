@@ -1,6 +1,6 @@
 import fs from 'fs';
-import type { ResponseLike } from 'deeptable/internal/to-file';
-import { toFile } from 'deeptable/core/uploads';
+import type { ResponseLike } from '@deeptable/deeptable/internal/to-file';
+import { toFile } from '@deeptable/deeptable/core/uploads';
 import { File } from 'node:buffer';
 
 class MyClass {
@@ -97,7 +97,7 @@ describe('missing File error message', () => {
   });
 
   test('is thrown', async () => {
-    const uploads = await import('deeptable/core/uploads');
+    const uploads = await import('@deeptable/deeptable/core/uploads');
     await expect(
       uploads.toFile(mockResponse({ url: 'https://example.com/my/audio.mp3' })),
     ).rejects.toMatchInlineSnapshot(

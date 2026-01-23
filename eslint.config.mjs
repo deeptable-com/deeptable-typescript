@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           patterns: [
             {
-              regex: '^deeptable(/.*)?',
+              regex: '^@deeptable/deeptable(/.*)?',
               message: 'Use a relative import, not a package import.',
             },
           ],
