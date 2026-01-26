@@ -60,6 +60,30 @@ export class Files extends APIResource {
   }
 
   /**
+   * Download the original uploaded file content.
+   *
+   * @example
+   * ```ts
+   * const response = await client.files.download(
+   *   'file_01abc2def3ghjkmnpqrs4uvwxy',
+   * );
+   *
+   * const content = await response.blob();
+   * console.log(content);
+   * ```
+   */
+  download(fileID: string, options?: RequestOptions): APIPromise<Response> {
+    return this._client.get(path`/v1/files/${fileID}/content`, {
+      ...options,
+      headers: buildHeaders([
+        { Accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },
+        options?.headers,
+      ]),
+      __binaryResponse: true,
+    });
+  }
+
+  /**
    * Upload an Excel spreadsheet file for later processing.
    *
    * Supported formats:

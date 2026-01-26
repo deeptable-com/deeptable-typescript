@@ -9,8 +9,9 @@ export {
 } from './files';
 export {
   StructuredSheets,
-  type StructuredSheetResponse,
+  type StructuredSheetsResponse,
   type StructuredSheetCreateParams,
   type StructuredSheetListParams,
-  type StructuredSheetResponsesCursorIDPage,
+  type StructuredSheetDownloadParams,
+  type StructuredSheetsResponsesCursorIDPage,
 } from './structured-sheets/structured-sheets';
