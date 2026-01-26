@@ -15,9 +15,9 @@ export class Tables extends APIResource {
    * ```ts
    * const tableResponse =
    *   await client.structuredSheets.tables.retrieve(
-   *     'tbl_01abc2def3ghjkmnpqrs4uvwxy',
+   *     'tbl_01kfxgjd94fn9stqm45rqr2pnz',
    *     {
-   *       structured_sheets_id: 'ss_01abc2def3ghjkmnpqrs4uvwxy',
+   *       structured_sheets_id: 'ss_01kfxgjd94fn9stqm42nejb627',
    *     },
    *   );
    * ```
@@ -38,7 +38,7 @@ export class Tables extends APIResource {
    * @example
    * ```ts
    * const tables = await client.structuredSheets.tables.list(
-   *   'ss_01abc2def3ghjkmnpqrs4uvwxy',
+   *   'ss_01kfxgjd94fn9stqm42nejb627',
    * );
    * ```
    */
@@ -58,9 +58,9 @@ export class Tables extends APIResource {
    * ```ts
    * const response =
    *   await client.structuredSheets.tables.download(
-   *     'tbl_01abc2def3ghjkmnpqrs4uvwxy',
+   *     'tbl_01kfxgjd94fn9stqm45rqr2pnz',
    *     {
-   *       structured_sheets_id: 'ss_01abc2def3ghjkmnpqrs4uvwxy',
+   *       structured_sheets_id: 'ss_01kfxgjd94fn9stqm42nejb627',
    *     },
    *   );
    *

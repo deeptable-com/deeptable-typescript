@@ -16,7 +16,7 @@ export class Files extends APIResource {
    * @example
    * ```ts
    * const file = await client.files.retrieve(
-   *   'file_01abc2def3ghjkmnpqrs4uvwxy',
+   *   'file_01kfxgjd94fn9stqm414vjb0s8',
    * );
    * ```
    */
@@ -48,7 +48,7 @@ export class Files extends APIResource {
    * @example
    * ```ts
    * await client.files.delete(
-   *   'file_01abc2def3ghjkmnpqrs4uvwxy',
+   *   'file_01kfxgjd94fn9stqm414vjb0s8',
    * );
    * ```
    */
@@ -65,7 +65,7 @@ export class Files extends APIResource {
    * @example
    * ```ts
    * const response = await client.files.download(
-   *   'file_01abc2def3ghjkmnpqrs4uvwxy',
+   *   'file_01kfxgjd94fn9stqm414vjb0s8',
    * );
    *
    * const content = await response.blob();

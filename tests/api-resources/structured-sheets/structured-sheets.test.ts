@@ -30,7 +30,7 @@ describe('resource structuredSheets', () => {
 
   // Prism tests are disabled
   test.skip('retrieve', async () => {
-    const responsePromise = client.structuredSheets.retrieve('ss_01abc2def3ghjkmnpqrs4uvwxy');
+    const responsePromise = client.structuredSheets.retrieve('ss_01kfxgjd94fn9stqm42nejb627');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -57,7 +57,7 @@ describe('resource structuredSheets', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.structuredSheets.list(
-        { after: 'ss_01abc2def3ghjkmnpqrs4uvwxy', limit: 20 },
+        { after: 'ss_01kfxgjd94fn9stqm42nejb627', limit: 20 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(DeepTable.NotFoundError);
@@ -65,7 +65,7 @@ describe('resource structuredSheets', () => {
 
   // Prism tests are disabled
   test.skip('delete', async () => {
-    const responsePromise = client.structuredSheets.delete('ss_01abc2def3ghjkmnpqrs4uvwxy');
+    const responsePromise = client.structuredSheets.delete('ss_01kfxgjd94fn9stqm42nejb627');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -77,7 +77,7 @@ describe('resource structuredSheets', () => {
 
   // Prism tests are disabled
   test.skip('cancel', async () => {
-    const responsePromise = client.structuredSheets.cancel('ss_01abc2def3ghjkmnpqrs4uvwxy');
+    const responsePromise = client.structuredSheets.cancel('ss_01kfxgjd94fn9stqm42nejb627');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -91,7 +91,7 @@ describe('resource structuredSheets', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.structuredSheets.download(
-        'ss_01abc2def3ghjkmnpqrs4uvwxy',
+        'ss_01kfxgjd94fn9stqm42nejb627',
         { format: 'sqlite' },
         { path: '/_stainless_unknown_path' },
       ),

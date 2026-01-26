@@ -36,7 +36,7 @@ export class StructuredSheets extends APIResource {
    * ```ts
    * const structuredSheetsResponse =
    *   await client.structuredSheets.retrieve(
-   *     'ss_01abc2def3ghjkmnpqrs4uvwxy',
+   *     'ss_01kfxgjd94fn9stqm42nejb627',
    *   );
    * ```
    */
@@ -73,7 +73,7 @@ export class StructuredSheets extends APIResource {
    * @example
    * ```ts
    * await client.structuredSheets.delete(
-   *   'ss_01abc2def3ghjkmnpqrs4uvwxy',
+   *   'ss_01kfxgjd94fn9stqm42nejb627',
    * );
    * ```
    */
@@ -92,7 +92,7 @@ export class StructuredSheets extends APIResource {
    * ```ts
    * const structuredSheetsResponse =
    *   await client.structuredSheets.cancel(
-   *     'ss_01abc2def3ghjkmnpqrs4uvwxy',
+   *     'ss_01kfxgjd94fn9stqm42nejb627',
    *   );
    * ```
    */
@@ -112,7 +112,7 @@ export class StructuredSheets extends APIResource {
    * @example
    * ```ts
    * const response = await client.structuredSheets.download(
-   *   'ss_01abc2def3ghjkmnpqrs4uvwxy',
+   *   'ss_01kfxgjd94fn9stqm42nejb627',
    * );
    *
    * const content = await response.blob();
