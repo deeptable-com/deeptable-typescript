@@ -10,7 +10,7 @@ const client = new DeepTable({
 describe('resource files', () => {
   // Prism tests are disabled
   test.skip('retrieve', async () => {
-    const responsePromise = client.files.retrieve('file_01abc2def3ghjkmnpqrs4uvwxy');
+    const responsePromise = client.files.retrieve('file_01kfxgjd94fn9stqm414vjb0s8');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -37,7 +37,7 @@ describe('resource files', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.files.list(
-        { after: 'file_01abc2def3ghjkmnpqrs4uvwxy', limit: 20 },
+        { after: 'file_01kfxgjd94fn9stqm414vjb0s8', limit: 20 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(DeepTable.NotFoundError);
@@ -45,7 +45,7 @@ describe('resource files', () => {
 
   // Prism tests are disabled
   test.skip('delete', async () => {
-    const responsePromise = client.files.delete('file_01abc2def3ghjkmnpqrs4uvwxy');
+    const responsePromise = client.files.delete('file_01kfxgjd94fn9stqm414vjb0s8');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;

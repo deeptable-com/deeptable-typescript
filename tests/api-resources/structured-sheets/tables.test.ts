@@ -10,8 +10,8 @@ const client = new DeepTable({
 describe('resource tables', () => {
   // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.structuredSheets.tables.retrieve('tbl_01abc2def3ghjkmnpqrs4uvwxy', {
-      structured_sheets_id: 'ss_01abc2def3ghjkmnpqrs4uvwxy',
+    const responsePromise = client.structuredSheets.tables.retrieve('tbl_01kfxgjd94fn9stqm45rqr2pnz', {
+      structured_sheets_id: 'ss_01kfxgjd94fn9stqm42nejb627',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -24,14 +24,14 @@ describe('resource tables', () => {
 
   // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.structuredSheets.tables.retrieve('tbl_01abc2def3ghjkmnpqrs4uvwxy', {
-      structured_sheets_id: 'ss_01abc2def3ghjkmnpqrs4uvwxy',
+    const response = await client.structuredSheets.tables.retrieve('tbl_01kfxgjd94fn9stqm45rqr2pnz', {
+      structured_sheets_id: 'ss_01kfxgjd94fn9stqm42nejb627',
     });
   });
 
   // Prism tests are disabled
   test.skip('list', async () => {
-    const responsePromise = client.structuredSheets.tables.list('ss_01abc2def3ghjkmnpqrs4uvwxy');
+    const responsePromise = client.structuredSheets.tables.list('ss_01kfxgjd94fn9stqm42nejb627');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -42,8 +42,8 @@ describe('resource tables', () => {
   });
 
   test('download: required and optional params', async () => {
-    const response = await client.structuredSheets.tables.download('tbl_01abc2def3ghjkmnpqrs4uvwxy', {
-      structured_sheets_id: 'ss_01abc2def3ghjkmnpqrs4uvwxy',
+    const response = await client.structuredSheets.tables.download('tbl_01kfxgjd94fn9stqm45rqr2pnz', {
+      structured_sheets_id: 'ss_01kfxgjd94fn9stqm42nejb627',
       format: 'parquet',
     });
   });
