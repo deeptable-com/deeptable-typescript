@@ -32,10 +32,9 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/structured-sheets/tables.ts">TableResponse</a></code>
-- <code><a href="./src/resources/structured-sheets/tables.ts">TableListResponse</a></code>
 
 Methods:
 
 - <code title="get /v1/structured-sheets/{structured_sheets_id}/tables/{table_id}">client.structuredSheets.tables.<a href="./src/resources/structured-sheets/tables.ts">retrieve</a>(tableID, { ...params }) -> TableResponse</code>
-- <code title="get /v1/structured-sheets/{structured_sheets_id}/tables">client.structuredSheets.tables.<a href="./src/resources/structured-sheets/tables.ts">list</a>(structuredSheetsID) -> TableListResponse</code>
+- <code title="get /v1/structured-sheets/{structured_sheets_id}/tables">client.structuredSheets.tables.<a href="./src/resources/structured-sheets/tables.ts">list</a>(structuredSheetsID, { ...params }) -> TableResponsesCursorIDPage</code>
 - <code title="get /v1/structured-sheets/{structured_sheets_id}/tables/{table_id}/download">client.structuredSheets.tables.<a href="./src/resources/structured-sheets/tables.ts">download</a>(tableID, { ...params }) -> Response</code>

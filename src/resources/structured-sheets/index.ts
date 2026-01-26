@@ -11,7 +11,8 @@ export {
 export {
   Tables,
   type TableResponse,
-  type TableListResponse,
   type TableRetrieveParams,
+  type TableListParams,
   type TableDownloadParams,
+  type TableResponsesCursorIDPage,
 } from './tables';
