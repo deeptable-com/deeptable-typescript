@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2026-01-26)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Features
+
+* Make format parameter required in download_table endpoint and improve OpenAPI spec publishing ([5098c51](https://github.com/deeptable-com/deeptable-typescript/commit/5098c51ff82d750971d69cf935144a623173a121))
+
 ## 0.1.0-alpha.2 (2026-01-26)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
