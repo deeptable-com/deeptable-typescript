@@ -61,6 +61,7 @@ export class Tables extends APIResource {
    *     'tbl_01kfxgjd94fn9stqm45rqr2pnz',
    *     {
    *       structured_sheets_id: 'ss_01kfxgjd94fn9stqm42nejb627',
+   *       format: 'parquet',
    *     },
    *   );
    *
@@ -176,7 +177,7 @@ export interface TableDownloadParams {
   /**
    * Query param: The format to download the table data in.
    */
-  format?: 'parquet' | 'csv';
+  format: 'parquet' | 'csv';
 }
 
 export declare namespace Tables {
