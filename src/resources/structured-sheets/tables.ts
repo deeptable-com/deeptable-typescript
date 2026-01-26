@@ -2,6 +2,7 @@
 
 import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
+import { CursorIDPage, type CursorIDPageParams, PagePromise } from '../../core/pagination';
 import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
@@ -37,13 +38,24 @@ export class Tables extends APIResource {
    *
    * @example
    * ```ts
-   * const tables = await client.structuredSheets.tables.list(
+   * // Automatically fetches more pages as needed.
+   * for await (const tableResponse of client.structuredSheets.tables.list(
    *   'ss_01kfxgjd94fn9stqm42nejb627',
-   * );
+   * )) {
+   *   // ...
+   * }
    * ```
    */
-  list(structuredSheetsID: string, options?: RequestOptions): APIPromise<TableListResponse> {
-    return this._client.get(path`/v1/structured-sheets/${structuredSheetsID}/tables`, options);
+  list(
+    structuredSheetsID: string,
+    query: TableListParams | null | undefined = {},
+    options?: RequestOptions,
+  ): PagePromise<TableResponsesCursorIDPage, TableResponse> {
+    return this._client.getAPIList(
+      path`/v1/structured-sheets/${structuredSheetsID}/tables`,
+      CursorIDPage<TableResponse>,
+      { query, ...options },
+    );
   }
 
   /**
@@ -79,6 +91,8 @@ export class Tables extends APIResource {
     });
   }
 }
+
+export type TableResponsesCursorIDPage = CursorIDPage<TableResponse>;
 
 /**
  * Response representing a table extracted from a structured sheet.
@@ -129,44 +143,14 @@ export interface TableResponse {
   object?: 'table';
 }
 
-/**
- * Paginated response for listing tables from a structured sheet.
- *
- * Uses cursor-based pagination for efficient iteration through results.
- */
-export interface TableListResponse {
-  /**
-   * List of tables.
-   */
-  data: Array<TableResponse>;
-
-  /**
-   * Whether there are more results available after this page.
-   */
-  has_more: boolean;
-
-  /**
-   * Unique identifier for a table.
-   */
-  first_id?: string | null;
-
-  /**
-   * Unique identifier for a table.
-   */
-  last_id?: string | null;
-
-  /**
-   * The object type, which is always 'list'.
-   */
-  object?: 'list';
-}
-
 export interface TableRetrieveParams {
   /**
    * The unique identifier of the structured sheets conversion.
    */
   structured_sheets_id: string;
 }
+
+export interface TableListParams extends CursorIDPageParams {}
 
 export interface TableDownloadParams {
   /**
@@ -183,8 +167,9 @@ export interface TableDownloadParams {
 export declare namespace Tables {
   export {
     type TableResponse as TableResponse,
-    type TableListResponse as TableListResponse,
+    type TableResponsesCursorIDPage as TableResponsesCursorIDPage,
     type TableRetrieveParams as TableRetrieveParams,
+    type TableListParams as TableListParams,
     type TableDownloadParams as TableDownloadParams,
   };
 }

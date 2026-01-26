@@ -41,6 +41,18 @@ describe('resource tables', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
+  // Prism tests are disabled
+  test.skip('list: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.structuredSheets.tables.list(
+        'ss_01kfxgjd94fn9stqm42nejb627',
+        { after: 'tbl_01kfxgjd94fn9stqm45rqr2pnz', limit: 20 },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(DeepTable.NotFoundError);
+  });
+
   test('download: required and optional params', async () => {
     const response = await client.structuredSheets.tables.download('tbl_01kfxgjd94fn9stqm45rqr2pnz', {
       structured_sheets_id: 'ss_01kfxgjd94fn9stqm42nejb627',

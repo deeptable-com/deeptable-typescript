@@ -2,7 +2,14 @@
 
 import { APIResource } from '../../core/resource';
 import * as TablesAPI from './tables';
-import { TableDownloadParams, TableListResponse, TableResponse, TableRetrieveParams, Tables } from './tables';
+import {
+  TableDownloadParams,
+  TableListParams,
+  TableResponse,
+  TableResponsesCursorIDPage,
+  TableRetrieveParams,
+  Tables,
+} from './tables';
 import { APIPromise } from '../../core/api-promise';
 import { CursorIDPage, type CursorIDPageParams, PagePromise } from '../../core/pagination';
 import { buildHeaders } from '../../internal/headers';
@@ -240,8 +247,9 @@ export declare namespace StructuredSheets {
   export {
     Tables as Tables,
     type TableResponse as TableResponse,
-    type TableListResponse as TableListResponse,
+    type TableResponsesCursorIDPage as TableResponsesCursorIDPage,
     type TableRetrieveParams as TableRetrieveParams,
+    type TableListParams as TableListParams,
     type TableDownloadParams as TableDownloadParams,
   };
 }
