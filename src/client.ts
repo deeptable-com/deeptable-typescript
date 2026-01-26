@@ -21,10 +21,11 @@ import { APIPromise } from './core/api-promise';
 import { File, FileListParams, FileUploadParams, Files, FilesCursorIDPage } from './resources/files';
 import {
   StructuredSheetCreateParams,
+  StructuredSheetDownloadParams,
   StructuredSheetListParams,
-  StructuredSheetResponse,
-  StructuredSheetResponsesCursorIDPage,
   StructuredSheets,
+  StructuredSheetsResponse,
+  StructuredSheetsResponsesCursorIDPage,
 } from './resources/structured-sheets/structured-sheets';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
@@ -765,9 +766,10 @@ export declare namespace DeepTable {
 
   export {
     StructuredSheets as StructuredSheets,
-    type StructuredSheetResponse as StructuredSheetResponse,
-    type StructuredSheetResponsesCursorIDPage as StructuredSheetResponsesCursorIDPage,
+    type StructuredSheetsResponse as StructuredSheetsResponse,
+    type StructuredSheetsResponsesCursorIDPage as StructuredSheetsResponsesCursorIDPage,
     type StructuredSheetCreateParams as StructuredSheetCreateParams,
     type StructuredSheetListParams as StructuredSheetListParams,
+    type StructuredSheetDownloadParams as StructuredSheetDownloadParams,
   };
 }
