@@ -26,11 +26,11 @@ const client = new DeepTable({
   apiKey: process.env['DEEPTABLE_API_KEY'], // This is the default and can be omitted
 });
 
-const structuredSheetsResponse = await client.structuredSheets.create({
+const structuredSheetResponse = await client.structuredSheets.create({
   file_id: 'file_01h45ytscbebyvny4gc8cr8ma2',
 });
 
-console.log(structuredSheetsResponse.id);
+console.log(structuredSheetResponse.id);
 ```
 
 ### Request & Response types
@@ -48,7 +48,7 @@ const client = new DeepTable({
 const params: DeepTable.StructuredSheetCreateParams = {
   file_id: 'file_01h45ytscbebyvny4gc8cr8ma2',
 };
-const structuredSheetsResponse: DeepTable.StructuredSheetsResponse =
+const structuredSheetResponse: DeepTable.StructuredSheetResponse =
   await client.structuredSheets.create(params);
 ```
 
@@ -91,7 +91,7 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const structuredSheetsResponse = await client.structuredSheets
+const structuredSheetResponse = await client.structuredSheets
   .create({ file_id: 'file_01h45ytscbebyvny4gc8cr8ma2' })
   .catch(async (err) => {
     if (err instanceof DeepTable.APIError) {
@@ -210,11 +210,11 @@ const response = await client.structuredSheets
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: structuredSheetsResponse, response: raw } = await client.structuredSheets
+const { data: structuredSheetResponse, response: raw } = await client.structuredSheets
   .create({ file_id: 'file_01h45ytscbebyvny4gc8cr8ma2' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(structuredSheetsResponse.id);
+console.log(structuredSheetResponse.id);
 ```
 
 ### Logging

@@ -26,29 +26,29 @@ export class StructuredSheets extends APIResource {
    *
    * @example
    * ```ts
-   * const structuredSheetsResponse =
+   * const structuredSheetResponse =
    *   await client.structuredSheets.create({
    *     file_id: 'file_01h45ytscbebyvny4gc8cr8ma2',
    *   });
    * ```
    */
-  create(body: StructuredSheetCreateParams, options?: RequestOptions): APIPromise<StructuredSheetsResponse> {
+  create(body: StructuredSheetCreateParams, options?: RequestOptions): APIPromise<StructuredSheetResponse> {
     return this._client.post('/v1/structured-sheets', { body, ...options });
   }
 
   /**
-   * Get the status and details of a structured sheets conversion.
+   * Get the status and details of a structured sheet conversion.
    *
    * @example
    * ```ts
-   * const structuredSheetsResponse =
+   * const structuredSheetResponse =
    *   await client.structuredSheets.retrieve(
    *     'ss_01kfxgjd94fn9stqm42nejb627',
    *   );
    * ```
    */
-  retrieve(structuredSheetsID: string, options?: RequestOptions): APIPromise<StructuredSheetsResponse> {
-    return this._client.get(path`/v1/structured-sheets/${structuredSheetsID}`, options);
+  retrieve(structuredSheetID: string, options?: RequestOptions): APIPromise<StructuredSheetResponse> {
+    return this._client.get(path`/v1/structured-sheets/${structuredSheetID}`, options);
   }
 
   /**
@@ -58,7 +58,7 @@ export class StructuredSheets extends APIResource {
    * @example
    * ```ts
    * // Automatically fetches more pages as needed.
-   * for await (const structuredSheetsResponse of client.structuredSheets.list()) {
+   * for await (const structuredSheetResponse of client.structuredSheets.list()) {
    *   // ...
    * }
    * ```
@@ -66,45 +66,43 @@ export class StructuredSheets extends APIResource {
   list(
     query: StructuredSheetListParams | null | undefined = {},
     options?: RequestOptions,
-  ): PagePromise<StructuredSheetsResponsesCursorIDPage, StructuredSheetsResponse> {
-    return this._client.getAPIList('/v1/structured-sheets', CursorIDPage<StructuredSheetsResponse>, {
+  ): PagePromise<StructuredSheetResponsesCursorIDPage, StructuredSheetResponse> {
+    return this._client.getAPIList('/v1/structured-sheets', CursorIDPage<StructuredSheetResponse>, {
       query,
       ...options,
     });
   }
 
   /**
-   * Delete a structured sheets conversion and its associated exports. This action
+   * Delete a structured sheet conversion and its associated exports. This action
    * cannot be undone.
    *
    * @example
    * ```ts
-   * await client.structuredSheets.delete(
-   *   'ss_01kfxgjd94fn9stqm42nejb627',
-   * );
+   * const structuredSheet =
+   *   await client.structuredSheets.delete(
+   *     'ss_01kfxgjd94fn9stqm42nejb627',
+   *   );
    * ```
    */
-  delete(structuredSheetsID: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.delete(path`/v1/structured-sheets/${structuredSheetsID}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+  delete(structuredSheetID: string, options?: RequestOptions): APIPromise<StructuredSheetDeleteResponse> {
+    return this._client.delete(path`/v1/structured-sheets/${structuredSheetID}`, options);
   }
 
   /**
-   * Cancel a structured sheets conversion that is in progress. Only jobs with status
+   * Cancel a structured sheet conversion that is in progress. Only jobs with status
    * 'queued' or 'in_progress' can be cancelled.
    *
    * @example
    * ```ts
-   * const structuredSheetsResponse =
+   * const structuredSheetResponse =
    *   await client.structuredSheets.cancel(
    *     'ss_01kfxgjd94fn9stqm42nejb627',
    *   );
    * ```
    */
-  cancel(structuredSheetsID: string, options?: RequestOptions): APIPromise<StructuredSheetsResponse> {
-    return this._client.post(path`/v1/structured-sheets/${structuredSheetsID}/cancel`, options);
+  cancel(structuredSheetID: string, options?: RequestOptions): APIPromise<StructuredSheetResponse> {
+    return this._client.post(path`/v1/structured-sheets/${structuredSheetID}/cancel`, options);
   }
 
   /**
@@ -127,11 +125,11 @@ export class StructuredSheets extends APIResource {
    * ```
    */
   download(
-    structuredSheetsID: string,
+    structuredSheetID: string,
     query: StructuredSheetDownloadParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<Response> {
-    return this._client.get(path`/v1/structured-sheets/${structuredSheetsID}/download`, {
+    return this._client.get(path`/v1/structured-sheets/${structuredSheetID}/download`, {
       query,
       ...options,
       headers: buildHeaders([{ Accept: 'application/x-sqlite3' }, options?.headers]),
@@ -140,16 +138,16 @@ export class StructuredSheets extends APIResource {
   }
 }
 
-export type StructuredSheetsResponsesCursorIDPage = CursorIDPage<StructuredSheetsResponse>;
+export type StructuredSheetResponsesCursorIDPage = CursorIDPage<StructuredSheetResponse>;
 
 /**
- * Response representing a structured sheets conversion job.
+ * Response representing a structured sheet conversion job.
  *
  * This is returned from POST (create), GET (retrieve), and list endpoints.
  */
-export interface StructuredSheetsResponse {
+export interface StructuredSheetResponse {
   /**
-   * The unique identifier for this structured sheets conversion.
+   * The unique identifier for this structured sheet conversion.
    */
   id: string;
 
@@ -176,7 +174,7 @@ export interface StructuredSheetsResponse {
   /**
    * Error information when processing fails.
    */
-  last_error?: StructuredSheetsResponse.LastError | null;
+  last_error?: StructuredSheetResponse.LastError | null;
 
   /**
    * The object type, which is always 'structured_sheet'.
@@ -195,7 +193,7 @@ export interface StructuredSheetsResponse {
   table_count?: number | null;
 }
 
-export namespace StructuredSheetsResponse {
+export namespace StructuredSheetResponse {
   /**
    * Error information when processing fails.
    */
@@ -210,6 +208,28 @@ export namespace StructuredSheetsResponse {
      */
     message: string;
   }
+}
+
+/**
+ * Response from deleting a structured sheet.
+ *
+ * Following the OpenAI API convention for delete responses.
+ */
+export interface StructuredSheetDeleteResponse {
+  /**
+   * The unique identifier of the deleted structured sheet.
+   */
+  id: string;
+
+  /**
+   * Whether the structured sheet was successfully deleted.
+   */
+  deleted?: true;
+
+  /**
+   * The object type, which is always 'structured_sheet'.
+   */
+  object?: 'structured_sheet';
 }
 
 export interface StructuredSheetCreateParams {
@@ -237,8 +257,9 @@ StructuredSheets.Tables = Tables;
 
 export declare namespace StructuredSheets {
   export {
-    type StructuredSheetsResponse as StructuredSheetsResponse,
-    type StructuredSheetsResponsesCursorIDPage as StructuredSheetsResponsesCursorIDPage,
+    type StructuredSheetResponse as StructuredSheetResponse,
+    type StructuredSheetDeleteResponse as StructuredSheetDeleteResponse,
+    type StructuredSheetResponsesCursorIDPage as StructuredSheetResponsesCursorIDPage,
     type StructuredSheetCreateParams as StructuredSheetCreateParams,
     type StructuredSheetListParams as StructuredSheetListParams,
     type StructuredSheetDownloadParams as StructuredSheetDownloadParams,
