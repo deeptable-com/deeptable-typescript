@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2026-01-27)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Features
+
+* Add seed_bill_snow.py to test.yaml for Bruno E2E tests ([bb0e7df](https://github.com/deeptable-com/deeptable-typescript/commit/bb0e7df795575f65934cb73e82be2114c7bc0835))
+* Fix seed.sql to overwrite records on conflict ([3c0a301](https://github.com/deeptable-com/deeptable-typescript/commit/3c0a3013af5ad012136ea459c18df8a035fd84e5))
+
 ## 0.1.0-alpha.3 (2026-01-26)
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
