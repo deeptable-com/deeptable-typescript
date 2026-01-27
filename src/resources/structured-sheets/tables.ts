@@ -18,7 +18,7 @@ export class Tables extends APIResource {
    *   await client.structuredSheets.tables.retrieve(
    *     'tbl_01kfxgjd94fn9stqm45rqr2pnz',
    *     {
-   *       structured_sheets_id: 'ss_01kfxgjd94fn9stqm42nejb627',
+   *       structured_sheet_id: 'ss_01kfxgjd94fn9stqm42nejb627',
    *     },
    *   );
    * ```
@@ -28,8 +28,8 @@ export class Tables extends APIResource {
     params: TableRetrieveParams,
     options?: RequestOptions,
   ): APIPromise<TableResponse> {
-    const { structured_sheets_id } = params;
-    return this._client.get(path`/v1/structured-sheets/${structured_sheets_id}/tables/${tableID}`, options);
+    const { structured_sheet_id } = params;
+    return this._client.get(path`/v1/structured-sheets/${structured_sheet_id}/tables/${tableID}`, options);
   }
 
   /**
@@ -47,12 +47,12 @@ export class Tables extends APIResource {
    * ```
    */
   list(
-    structuredSheetsID: string,
+    structuredSheetID: string,
     query: TableListParams | null | undefined = {},
     options?: RequestOptions,
   ): PagePromise<TableResponsesCursorIDPage, TableResponse> {
     return this._client.getAPIList(
-      path`/v1/structured-sheets/${structuredSheetsID}/tables`,
+      path`/v1/structured-sheets/${structuredSheetID}/tables`,
       CursorIDPage<TableResponse>,
       { query, ...options },
     );
@@ -72,7 +72,7 @@ export class Tables extends APIResource {
    *   await client.structuredSheets.tables.download(
    *     'tbl_01kfxgjd94fn9stqm45rqr2pnz',
    *     {
-   *       structured_sheets_id: 'ss_01kfxgjd94fn9stqm42nejb627',
+   *       structured_sheet_id: 'ss_01kfxgjd94fn9stqm42nejb627',
    *       format: 'parquet',
    *     },
    *   );
@@ -82,8 +82,8 @@ export class Tables extends APIResource {
    * ```
    */
   download(tableID: string, params: TableDownloadParams, options?: RequestOptions): APIPromise<Response> {
-    const { structured_sheets_id, ...query } = params;
-    return this._client.get(path`/v1/structured-sheets/${structured_sheets_id}/tables/${tableID}/download`, {
+    const { structured_sheet_id, ...query } = params;
+    return this._client.get(path`/v1/structured-sheets/${structured_sheet_id}/tables/${tableID}/download`, {
       query,
       ...options,
       headers: buildHeaders([{ Accept: 'application/vnd.apache.parquet' }, options?.headers]),
@@ -145,18 +145,18 @@ export interface TableResponse {
 
 export interface TableRetrieveParams {
   /**
-   * The unique identifier of the structured sheets conversion.
+   * The unique identifier of the structured sheet conversion.
    */
-  structured_sheets_id: string;
+  structured_sheet_id: string;
 }
 
 export interface TableListParams extends CursorIDPageParams {}
 
 export interface TableDownloadParams {
   /**
-   * Path param: The unique identifier of the structured sheets conversion.
+   * Path param: The unique identifier of the structured sheet conversion.
    */
-  structured_sheets_id: string;
+  structured_sheet_id: string;
 
   /**
    * Query param: The format to download the table data in.

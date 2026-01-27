@@ -18,14 +18,22 @@ import { AbstractPage, type CursorIDPageParams, CursorIDPageResponse } from './c
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import { File, FileListParams, FileUploadParams, Files, FilesCursorIDPage } from './resources/files';
+import {
+  File,
+  FileDeleteResponse,
+  FileListParams,
+  FileUploadParams,
+  Files,
+  FilesCursorIDPage,
+} from './resources/files';
 import {
   StructuredSheetCreateParams,
+  StructuredSheetDeleteResponse,
   StructuredSheetDownloadParams,
   StructuredSheetListParams,
+  StructuredSheetResponse,
+  StructuredSheetResponsesCursorIDPage,
   StructuredSheets,
-  StructuredSheetsResponse,
-  StructuredSheetsResponsesCursorIDPage,
 } from './resources/structured-sheets/structured-sheets';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
@@ -759,6 +767,7 @@ export declare namespace DeepTable {
   export {
     Files as Files,
     type File as File,
+    type FileDeleteResponse as FileDeleteResponse,
     type FilesCursorIDPage as FilesCursorIDPage,
     type FileListParams as FileListParams,
     type FileUploadParams as FileUploadParams,
@@ -766,8 +775,9 @@ export declare namespace DeepTable {
 
   export {
     StructuredSheets as StructuredSheets,
-    type StructuredSheetsResponse as StructuredSheetsResponse,
-    type StructuredSheetsResponsesCursorIDPage as StructuredSheetsResponsesCursorIDPage,
+    type StructuredSheetResponse as StructuredSheetResponse,
+    type StructuredSheetDeleteResponse as StructuredSheetDeleteResponse,
+    type StructuredSheetResponsesCursorIDPage as StructuredSheetResponsesCursorIDPage,
     type StructuredSheetCreateParams as StructuredSheetCreateParams,
     type StructuredSheetListParams as StructuredSheetListParams,
     type StructuredSheetDownloadParams as StructuredSheetDownloadParams,

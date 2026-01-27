@@ -47,16 +47,13 @@ export class Files extends APIResource {
    *
    * @example
    * ```ts
-   * await client.files.delete(
+   * const file = await client.files.delete(
    *   'file_01kfxgjd94fn9stqm414vjb0s8',
    * );
    * ```
    */
-  delete(fileID: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.delete(path`/v1/files/${fileID}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+  delete(fileID: string, options?: RequestOptions): APIPromise<FileDeleteResponse> {
+    return this._client.delete(path`/v1/files/${fileID}`, options);
   }
 
   /**
@@ -143,6 +140,28 @@ export interface File {
   object?: 'file';
 }
 
+/**
+ * Response from deleting a file.
+ *
+ * Following the OpenAI API convention for delete responses.
+ */
+export interface FileDeleteResponse {
+  /**
+   * The unique identifier of the deleted file.
+   */
+  id: string;
+
+  /**
+   * Whether the file was successfully deleted.
+   */
+  deleted?: true;
+
+  /**
+   * The object type, which is always 'file'.
+   */
+  object?: 'file';
+}
+
 export interface FileListParams extends CursorIDPageParams {}
 
 export interface FileUploadParams {
@@ -155,6 +174,7 @@ export interface FileUploadParams {
 export declare namespace Files {
   export {
     type File as File,
+    type FileDeleteResponse as FileDeleteResponse,
     type FilesCursorIDPage as FilesCursorIDPage,
     type FileListParams as FileListParams,
     type FileUploadParams as FileUploadParams,
