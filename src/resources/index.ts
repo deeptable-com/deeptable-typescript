@@ -3,15 +3,17 @@
 export {
   Files,
   type File,
+  type FileDeleteResponse,
   type FileListParams,
   type FileUploadParams,
   type FilesCursorIDPage,
 } from './files';
 export {
   StructuredSheets,
-  type StructuredSheetsResponse,
+  type StructuredSheetResponse,
+  type StructuredSheetDeleteResponse,
   type StructuredSheetCreateParams,
   type StructuredSheetListParams,
   type StructuredSheetDownloadParams,
-  type StructuredSheetsResponsesCursorIDPage,
+  type StructuredSheetResponsesCursorIDPage,
 } from './structured-sheets/structured-sheets';

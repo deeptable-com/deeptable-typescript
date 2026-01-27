@@ -2,11 +2,12 @@
 
 export {
   StructuredSheets,
-  type StructuredSheetsResponse,
+  type StructuredSheetResponse,
+  type StructuredSheetDeleteResponse,
   type StructuredSheetCreateParams,
   type StructuredSheetListParams,
   type StructuredSheetDownloadParams,
-  type StructuredSheetsResponsesCursorIDPage,
+  type StructuredSheetResponsesCursorIDPage,
 } from './structured-sheets';
 export {
   Tables,
