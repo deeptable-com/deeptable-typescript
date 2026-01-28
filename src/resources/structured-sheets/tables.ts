@@ -97,8 +97,8 @@ export type TableResponsesCursorIDPage = CursorIDPage<TableResponse>;
 /**
  * Response representing a table extracted from a structured sheet.
  *
- * This is returned from GET (retrieve) and list table endpoints. Table names use
- * SQL naming conventions (e.g., monthly_head_count).
+ * This is returned from GET (retrieve) and list table endpoints. Table names use a
+ * composite format: {normalized_sheet_name}\_\_{table_name}.
  */
 export interface TableResponse {
   /**
@@ -112,7 +112,9 @@ export interface TableResponse {
   created_at: string;
 
   /**
-   * The name of the table using SQL naming conventions.
+   * Composite table name: {normalized_sheet_name}**{table_name}. Uses lowercase
+   * snake_case. Aggregation tables end with '**aggregations'. Example:
+   * 'staffing**head_count' or 'staffing**head_count\_\_aggregations'.
    */
   name: string;
 
@@ -120,12 +122,6 @@ export interface TableResponse {
    * The original Excel sheet name this table came from.
    */
   sheet_name: string;
-
-  /**
-   * Normalized sheet name for use in SQLite table names and export filenames
-   * (lowercase, snake_case).
-   */
-  sheet_name_normalized: string;
 
   /**
    * The ID of the structured sheet this table belongs to.
