@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-beta.1 (2026-01-28)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-beta.1](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-alpha.4...v0.1.0-beta.1)
+
+### Bug Fixes
+
+* documentation inconsistencies ([173c791](https://github.com/deeptable-com/deeptable-typescript/commit/173c7915c6388e001d6f7efe064779fb95d25cd4))
+
 ## 0.1.0-alpha.4 (2026-01-27)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
