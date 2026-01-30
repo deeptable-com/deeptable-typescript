@@ -113,10 +113,17 @@ export interface TableResponse {
 
   /**
    * Composite table name: {normalized_sheet_name}**{table_name}. Uses lowercase
-   * snake_case. Aggregation tables end with '**aggregations'. Example:
-   * 'staffing**head_count' or 'staffing**head_count\_\_aggregations'.
+   * snake_case. Aggregation tables end with '**aggregations'. Two special metadata
+   * tables exist per structured sheet: '**deeptable_workbook_metadata' (workbook
+   * provenance info) and '**deeptable_table_overview' (summary of all tables).
+   * Example: 'staffing**head_count' or 'staffing**head_count\_\_aggregations'.
    */
   name: string;
+
+  /**
+   * The object type, which is always 'table'.
+   */
+  object: 'table';
 
   /**
    * The original Excel sheet name this table came from.
@@ -129,14 +136,9 @@ export interface TableResponse {
   structured_sheet_id: string;
 
   /**
-   * The type of table (relational, aggregation, or tableless).
+   * The type of table (relational, aggregation, tableless, or metadata).
    */
   type: 'relational' | 'aggregation' | 'tableless' | 'metadata';
-
-  /**
-   * The object type, which is always 'table'.
-   */
-  object?: 'table';
 }
 
 export interface TableRetrieveParams {
