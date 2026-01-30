@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-beta.3 (2026-01-30)
+
+Full Changelog: [v0.1.0-beta.2...v0.1.0-beta.3](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.2...v0.1.0-beta.3)
+
+### Features
+
+* Add column_sqlite_type and column_parquet_type to ColumnMetadata and enhance metadata tracking ([1c32e14](https://github.com/deeptable-com/deeptable-typescript/commit/1c32e146aac9d77695fb6fadf77e2dc4e3a5b461))
+
 ## 0.1.0-beta.2 (2026-01-30)
 
 Full Changelog: [v0.1.0-beta.1...v0.1.0-beta.2](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.1...v0.1.0-beta.2)
