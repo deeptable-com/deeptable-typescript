@@ -162,6 +162,11 @@ export interface StructuredSheetResponse {
   file_id: string;
 
   /**
+   * The object type, which is always 'structured_sheet'.
+   */
+  object: 'structured_sheet';
+
+  /**
    * The current processing status.
    */
   status: 'queued' | 'in_progress' | 'completed' | 'failed' | 'cancelled';
@@ -175,11 +180,6 @@ export interface StructuredSheetResponse {
    * Error information when processing fails.
    */
   last_error?: StructuredSheetResponse.LastError | null;
-
-  /**
-   * The object type, which is always 'structured_sheet'.
-   */
-  object?: 'structured_sheet';
 
   /**
    * List of sheet names included in this conversion.
@@ -224,12 +224,12 @@ export interface StructuredSheetDeleteResponse {
   /**
    * Whether the structured sheet was successfully deleted.
    */
-  deleted?: true;
+  deleted: true;
 
   /**
    * The object type, which is always 'structured_sheet'.
    */
-  object?: 'structured_sheet';
+  object: 'structured_sheet';
 }
 
 export interface StructuredSheetCreateParams {

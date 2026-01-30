@@ -130,14 +130,14 @@ export interface File {
   file_name: string;
 
   /**
+   * The object type, which is always 'file'.
+   */
+  object: 'file';
+
+  /**
    * The size of the file in bytes.
    */
   size: number;
-
-  /**
-   * The object type, which is always 'file'.
-   */
-  object?: 'file';
 }
 
 /**
@@ -154,12 +154,12 @@ export interface FileDeleteResponse {
   /**
    * Whether the file was successfully deleted.
    */
-  deleted?: true;
+  deleted: true;
 
   /**
    * The object type, which is always 'file'.
    */
-  object?: 'file';
+  object: 'file';
 }
 
 export interface FileListParams extends CursorIDPageParams {}
