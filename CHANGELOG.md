@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-beta.2 (2026-01-30)
+
+Full Changelog: [v0.1.0-beta.1...v0.1.0-beta.2](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.1...v0.1.0-beta.2)
+
+### Features
+
+* Add 'metadata' to TableType enum ([9431e55](https://github.com/deeptable-com/deeptable-typescript/commit/9431e5552b0ee71c041816d567bf56aab983b894))
+
 ## 0.1.0-beta.1 (2026-01-28)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-beta.1](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-alpha.4...v0.1.0-beta.1)
