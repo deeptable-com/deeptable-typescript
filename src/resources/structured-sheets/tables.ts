@@ -131,7 +131,7 @@ export interface TableResponse {
   /**
    * The type of table (relational, aggregation, or tableless).
    */
-  type: 'relational' | 'aggregation' | 'tableless';
+  type: 'relational' | 'aggregation' | 'tableless' | 'metadata';
 
   /**
    * The object type, which is always 'table'.
