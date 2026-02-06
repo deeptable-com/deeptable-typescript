@@ -1,4 +1,4 @@
 configured_endpoints: 14
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/deeptable%2Fdeeptable-343b873548078db96bc49e2b21529dac4a96df1896d83b6d1dc0eb3d3686bfe0.yml
-openapi_spec_hash: 66dd5d9c2dde1498493e6a7ecc5c4379
-config_hash: fd671a4aa17bf0c1089de96b6f2841d8
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/deeptable%2Fdeeptable-acfb7545d19701827292fc4663c6852d423dd84e65639e5b7ed766dc2d01aff2.yml
+openapi_spec_hash: 9f090892f01aa7afe4f22910c41b911b
+config_hash: b07e051e4a3906cf3b6e2e88920b0883
