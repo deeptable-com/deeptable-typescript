@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-beta.4 (2026-02-12)
+
+Full Changelog: [v0.1.0-beta.3...v0.1.0-beta.4](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.3...v0.1.0-beta.4)
+
+### Bug Fixes
+
+* **client:** avoid memory leak with abort signals ([1a977e3](https://github.com/deeptable-com/deeptable-typescript/commit/1a977e36385976f7585f8371abdf5d79722d2c08))
+* **client:** avoid removing abort listener too early ([e0209c0](https://github.com/deeptable-com/deeptable-typescript/commit/e0209c027bbd6c4b4534f67d906f9ad8d77391c9))
+
+
+### Chores
+
+* **client:** do not parse responses with empty content-length ([5b717c7](https://github.com/deeptable-com/deeptable-typescript/commit/5b717c71a0f154b25d1076f5c38d92393e709326))
+* **client:** restructure abort controller binding ([e9367fa](https://github.com/deeptable-com/deeptable-typescript/commit/e9367fa9e5f0224300737e36994fc3183bb8342a))
+* **internal:** avoid type checking errors with ts-reset ([8fab995](https://github.com/deeptable-com/deeptable-typescript/commit/8fab995bb19b8a283a8e0f37a40864152fe5fd84))
+* **internal:** fix pagination internals not accepting option promises ([d096d58](https://github.com/deeptable-com/deeptable-typescript/commit/d096d58c4e1b56d3538559c79e5370d98ea38511))
+* **internal:** upgrade pnpm ([45ee5fc](https://github.com/deeptable-com/deeptable-typescript/commit/45ee5fc8e58fae5d5d98cab625b9c9965afd7756))
+
 ## 0.1.0-beta.3 (2026-01-30)
 
 Full Changelog: [v0.1.0-beta.2...v0.1.0-beta.3](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.2...v0.1.0-beta.3)
