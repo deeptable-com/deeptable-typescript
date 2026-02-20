@@ -8,7 +8,7 @@ const client = new DeepTable({
 });
 
 describe('resource tables', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.structuredSheets.tables.retrieve('tbl_01kfxgjd94fn9stqm45rqr2pnz', {
       structured_sheet_id: 'ss_01kfxgjd94fn9stqm42nejb627',
@@ -22,14 +22,14 @@ describe('resource tables', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.structuredSheets.tables.retrieve('tbl_01kfxgjd94fn9stqm45rqr2pnz', {
       structured_sheet_id: 'ss_01kfxgjd94fn9stqm42nejb627',
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.structuredSheets.tables.list('ss_01kfxgjd94fn9stqm42nejb627');
     const rawResponse = await responsePromise.asResponse();
@@ -41,7 +41,7 @@ describe('resource tables', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
