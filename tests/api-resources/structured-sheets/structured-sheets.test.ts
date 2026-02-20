@@ -8,7 +8,7 @@ const client = new DeepTable({
 });
 
 describe('resource structuredSheets', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.structuredSheets.create({ file_id: 'file_01h45ytscbebyvny4gc8cr8ma2' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource structuredSheets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.structuredSheets.create({
       file_id: 'file_01h45ytscbebyvny4gc8cr8ma2',
@@ -28,7 +28,7 @@ describe('resource structuredSheets', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.structuredSheets.retrieve('ss_01kfxgjd94fn9stqm42nejb627');
     const rawResponse = await responsePromise.asResponse();
@@ -40,7 +40,7 @@ describe('resource structuredSheets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.structuredSheets.list();
     const rawResponse = await responsePromise.asResponse();
@@ -52,7 +52,7 @@ describe('resource structuredSheets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -63,7 +63,7 @@ describe('resource structuredSheets', () => {
     ).rejects.toThrow(DeepTable.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.structuredSheets.delete('ss_01kfxgjd94fn9stqm42nejb627');
     const rawResponse = await responsePromise.asResponse();
@@ -75,7 +75,7 @@ describe('resource structuredSheets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('cancel', async () => {
     const responsePromise = client.structuredSheets.cancel('ss_01kfxgjd94fn9stqm42nejb627');
     const rawResponse = await responsePromise.asResponse();
