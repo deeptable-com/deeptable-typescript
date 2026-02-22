@@ -53,7 +53,8 @@ describe('resource tables', () => {
     ).rejects.toThrow(DeepTable.NotFoundError);
   });
 
-  test('download: required and optional params', async () => {
+  // Mock server tests are disabled
+  test.skip('download: required and optional params', async () => {
     const response = await client.structuredSheets.tables.download('tbl_01kfxgjd94fn9stqm45rqr2pnz', {
       structured_sheet_id: 'ss_01kfxgjd94fn9stqm42nejb627',
       format: 'parquet',
