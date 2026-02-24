@@ -60,7 +60,7 @@ $ yarn link @deeptable/deeptable
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global @deeptable/deeptable
+$ pnpm link --global @deeptable/deeptable
 ```
 
 ## Running tests
