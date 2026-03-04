@@ -759,7 +759,13 @@ export class DeepTable {
 
   static toFile = Uploads.toFile;
 
+  /**
+   * Upload and manage spreadsheet files. Files must be Excel (.xlsx) format.
+   */
   files: API.Files = new API.Files(this);
+  /**
+   * Convert uploaded spreadsheets into structured data. Creates relational tables from messy spreadsheet data.
+   */
   structuredSheets: API.StructuredSheets = new API.StructuredSheets(this);
 }
 
