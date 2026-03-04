@@ -9,6 +9,9 @@ import { RequestOptions } from '../internal/request-options';
 import { multipartFormRequestOptions } from '../internal/uploads';
 import { path } from '../internal/utils/path';
 
+/**
+ * Upload and manage spreadsheet files. Files must be Excel (.xlsx) format.
+ */
 export class Files extends APIResource {
   /**
    * Get metadata for a specific file.

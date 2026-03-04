@@ -16,6 +16,9 @@ import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
+/**
+ * Convert uploaded spreadsheets into structured data. Creates relational tables from messy spreadsheet data.
+ */
 export class StructuredSheets extends APIResource {
   tables: TablesAPI.Tables = new TablesAPI.Tables(this._client);
 
