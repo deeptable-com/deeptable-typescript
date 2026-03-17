@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.1.0-beta.4 (2026-03-17)
+
+Full Changelog: [v0.1.0-beta.3...v0.1.0-beta.4](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.3...v0.1.0-beta.4)
+
+### Bug Fixes
+
+* **client:** avoid memory leak with abort signals ([1a977e3](https://github.com/deeptable-com/deeptable-typescript/commit/1a977e36385976f7585f8371abdf5d79722d2c08))
+* **client:** avoid removing abort listener too early ([e0209c0](https://github.com/deeptable-com/deeptable-typescript/commit/e0209c027bbd6c4b4534f67d906f9ad8d77391c9))
+* **client:** preserve URL params already embedded in path ([6a5c48b](https://github.com/deeptable-com/deeptable-typescript/commit/6a5c48bcf39e1fc18620b586a392b8222af56e7b))
+* **docs/contributing:** correct pnpm link command ([8827776](https://github.com/deeptable-com/deeptable-typescript/commit/882777635aa7bf8992376a93febd05f95f073f42))
+* **internal:** skip tests that depend on mock server ([c8c57d7](https://github.com/deeptable-com/deeptable-typescript/commit/c8c57d72d0e5f1a88cf38123f2137846ee5f044e))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([7b63a1c](https://github.com/deeptable-com/deeptable-typescript/commit/7b63a1ca339fbefeb5c660234b0bbd0ef239c190))
+* **client:** do not parse responses with empty content-length ([5b717c7](https://github.com/deeptable-com/deeptable-typescript/commit/5b717c71a0f154b25d1076f5c38d92393e709326))
+* **client:** restructure abort controller binding ([e9367fa](https://github.com/deeptable-com/deeptable-typescript/commit/e9367fa9e5f0224300737e36994fc3183bb8342a))
+* **internal/client:** fix form-urlencoded requests ([cf90bd9](https://github.com/deeptable-com/deeptable-typescript/commit/cf90bd9145cc6735b2ada48b8ea4329f1daa24e0))
+* **internal:** avoid type checking errors with ts-reset ([8fab995](https://github.com/deeptable-com/deeptable-typescript/commit/8fab995bb19b8a283a8e0f37a40864152fe5fd84))
+* **internal:** codegen related update ([d6a1d09](https://github.com/deeptable-com/deeptable-typescript/commit/d6a1d094ab2367f4b3d0e6543f1085ae1c9fa132))
+* **internal:** codegen related update ([44fbaff](https://github.com/deeptable-com/deeptable-typescript/commit/44fbaff0d2d7b0331d152f13896ea376168bd0dd))
+* **internal:** fix pagination internals not accepting option promises ([d096d58](https://github.com/deeptable-com/deeptable-typescript/commit/d096d58c4e1b56d3538559c79e5370d98ea38511))
+* **internal:** move stringifyQuery implementation to internal function ([66d42ef](https://github.com/deeptable-com/deeptable-typescript/commit/66d42ef05f1d9fe147d52bdbf4db4209200fe2a7))
+* **internal:** remove mock server code ([8a79a00](https://github.com/deeptable-com/deeptable-typescript/commit/8a79a00a91c9aa9d05a6fc5815cc9dae7f10b3c6))
+* **internal:** tweak CI branches ([2e6bbdd](https://github.com/deeptable-com/deeptable-typescript/commit/2e6bbdd6d1c1bdec78248460d372dd8b03dec1b3))
+* **internal:** update dependencies to address dependabot vulnerabilities ([e4fa216](https://github.com/deeptable-com/deeptable-typescript/commit/e4fa21670df2523f6c7b09125361437d171a9650))
+* **internal:** upgrade pnpm ([45ee5fc](https://github.com/deeptable-com/deeptable-typescript/commit/45ee5fc8e58fae5d5d98cab625b9c9965afd7756))
+* **internal:** upgrade pnpm version ([623349a](https://github.com/deeptable-com/deeptable-typescript/commit/623349a9cbcd36c2760b145a05db2f2c95756e99))
+* update mock server docs ([84eb250](https://github.com/deeptable-com/deeptable-typescript/commit/84eb25070eb159640b5bbc6f46e4a2756d63ed03))
+* update placeholder string ([5414645](https://github.com/deeptable-com/deeptable-typescript/commit/541464557c68ab984455e653628c9c3f53b7e0c7))
+
 ## 0.1.0-beta.3 (2026-01-30)
 
 Full Changelog: [v0.1.0-beta.2...v0.1.0-beta.3](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.2...v0.1.0-beta.3)
