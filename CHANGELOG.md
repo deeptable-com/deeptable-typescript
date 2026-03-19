@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-beta.5 (2026-03-19)
+
+Full Changelog: [v0.1.0-beta.4...v0.1.0-beta.5](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.4...v0.1.0-beta.5)
+
+### Chores
+
+* ignore macOS .DS_Store ([d59e460](https://github.com/deeptable-com/deeptable-typescript/commit/d59e460de01fe6e31d72d956b97920fc4517f994))
+
 ## 0.1.0-beta.4 (2026-03-17)
 
 Full Changelog: [v0.1.0-beta.3...v0.1.0-beta.4](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.3...v0.1.0-beta.4)
