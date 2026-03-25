@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-beta.6 (2026-03-25)
+
+Full Changelog: [v0.1.0-beta.5...v0.1.0-beta.6](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.5...v0.1.0-beta.6)
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([da8ae51](https://github.com/deeptable-com/deeptable-typescript/commit/da8ae51373ca451b87fef7bff2191023f0eab173))
+* **internal:** update gitignore ([de228f9](https://github.com/deeptable-com/deeptable-typescript/commit/de228f9cac4326815aff0388330f543e4dca9e9d))
+
 ## 0.1.0-beta.5 (2026-03-19)
 
 Full Changelog: [v0.1.0-beta.4...v0.1.0-beta.5](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.4...v0.1.0-beta.5)
