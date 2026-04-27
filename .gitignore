@@ -9,6 +9,7 @@ dist-deno
 /*.tgz
 .idea/
 .eslintcache
+oidc
 
 # custom local ignores
 .DS_Store
