@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-beta.7 (2026-04-30)
+
+Full Changelog: [v0.1.0-beta.6...v0.1.0-beta.7](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.6...v0.1.0-beta.7)
+
+### Features
+
+* support setting headers via env ([8d44a6d](https://github.com/deeptable-com/deeptable-typescript/commit/8d44a6dd8ad8c9c0af7bca2380c587f47259d778))
+
+
+### Bug Fixes
+
+* **internal:** gitignore generated `oidc` dir ([6be8180](https://github.com/deeptable-com/deeptable-typescript/commit/6be81805d10d56f186ba2dc75c63e080b284a20f))
+
+
+### Chores
+
+* **format:** run eslint and prettier separately ([4b73131](https://github.com/deeptable-com/deeptable-typescript/commit/4b73131bad43ec71cefffa4ec49c484b34bececa))
+* **internal:** codegen related update ([f0d2b8b](https://github.com/deeptable-com/deeptable-typescript/commit/f0d2b8ba1a049635f8413b2c2994288af2ef8878))
+* **internal:** codegen related update ([4197dfc](https://github.com/deeptable-com/deeptable-typescript/commit/4197dfce7e7ba80d662def6f8a5de0e1459b0fa2))
+* **internal:** more robust bootstrap script ([56bca82](https://github.com/deeptable-com/deeptable-typescript/commit/56bca8266f6743d1a95539f9d710cc7f05b2fe4c))
+
 ## 0.1.0-beta.6 (2026-03-25)
 
 Full Changelog: [v0.1.0-beta.5...v0.1.0-beta.6](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.5...v0.1.0-beta.6)
