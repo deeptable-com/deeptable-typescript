@@ -1,7 +1,6 @@
 import fs from 'fs';
 import type { ResponseLike } from '@deeptable/deeptable/internal/to-file';
 import { toFile } from '@deeptable/deeptable/core/uploads';
-import { File } from 'node:buffer';
 
 class MyClass {
   name: string = 'foo';
