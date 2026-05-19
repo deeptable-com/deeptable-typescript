@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-beta.8 (2026-05-19)
+
+Full Changelog: [v0.1.0-beta.7...v0.1.0-beta.8](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.7...v0.1.0-beta.8)
+
+### Bug Fixes
+
+* **typescript:** upgrade tsc-multi so that it works with Node 26 ([5f45bb4](https://github.com/deeptable-com/deeptable-typescript/commit/5f45bb4a918594af49e85969434dcb98a0e9492c))
+
+
+### Chores
+
+* redact api-key headers in debug logs ([197f828](https://github.com/deeptable-com/deeptable-typescript/commit/197f828afa8ee9b6ecf67851ad1cb7dc8ff8a68f))
+* **tests:** remove redundant File import ([a46fe44](https://github.com/deeptable-com/deeptable-typescript/commit/a46fe4484ed0cdb8a4f9d0b39c488a92e08a65cb))
+
 ## 0.1.0-beta.7 (2026-04-30)
 
 Full Changelog: [v0.1.0-beta.6...v0.1.0-beta.7](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.6...v0.1.0-beta.7)
