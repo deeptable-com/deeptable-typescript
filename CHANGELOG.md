@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-beta.9 (2026-07-18)
+
+Full Changelog: [v0.1.0-beta.8...v0.1.0-beta.9](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.8...v0.1.0-beta.9)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([d940374](https://github.com/deeptable-com/deeptable-typescript/commit/d940374d6da64dfb12fda6ed1757b3f1bcfefdcd))
+
+
+### Bug Fixes
+
+* **ci:** bump @arethetypeswrong/cli to ^0.18.0 and run CI workflows on Node 24 ([7c419ec](https://github.com/deeptable-com/deeptable-typescript/commit/7c419ec822653e4419a7b74a2522ed7045b7cd04))
+* **client:** send content-type header for requests with an omitted optional body ([55394ae](https://github.com/deeptable-com/deeptable-typescript/commit/55394ae1582a322602b5b82570e8bfdd425ae259))
+
 ## 0.1.0-beta.8 (2026-05-19)
 
 Full Changelog: [v0.1.0-beta.7...v0.1.0-beta.8](https://github.com/deeptable-com/deeptable-typescript/compare/v0.1.0-beta.7...v0.1.0-beta.8)
